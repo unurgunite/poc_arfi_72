@@ -1,24 +1,26 @@
-# README
+# Proof of Concept for ARFI gem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a demonstration of using [ARFI](https://github.com/unurgunite/arfi) gem
 
-Things you may want to cover:
+* [Proof of Concept for ARFI gem](#proof-of-concept-for-arfi-gem)
+    * [Usage](#usage)
+    * [Installation](#installation)
 
-* Ruby version
+## Usage
 
-* System dependencies
+This project uses PostgreSQL database by default. In future updates there will be other database support.
 
-* Configuration
+## Installation
 
-* Database creation
+1. Run `docker compose up -d` to start the database.
+2. Run `bundle install && bundle exec rails s -b 0.0.0.0` to start the server.
+3. Run `bundle exec rails db:create db:migrate db:seed`
+4. Wait about 10 minutes for the results.
+5. Run `bundle exec rails c` and type `User.find_by_domain('gmail.com').explain(:analyze)`
 
-* Database initialization
+## Requirements
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 3.4.2
+* Rails 7.2.2.1
+* PostgreSQL 14
+* Docker
