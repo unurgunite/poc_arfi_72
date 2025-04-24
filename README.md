@@ -1,24 +1,8 @@
-# README
+# Proof of Concept for ARFI gem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a demonstration of using [ARFI](https://github.com/unurgunite/arfi) gem
 
-Things you may want to cover:
+# Usage
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project uses SQLite3 database by default. You can switch to PostgreSQL adapter by changing the
+`config/database.yml` file. 
