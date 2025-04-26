@@ -8,4 +8,4 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-FactoryBot.create_list(:user, 250_000)
+FactoryBot.create_list(:user, 250_000) unless ENV['SKIP_SEEDS']

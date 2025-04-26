@@ -19,6 +19,8 @@ This project uses PostgreSQL database by default. In future updates there will b
 4. Wait about 10 minutes for the results.
 5. Run `bundle exec rails c` and type `User.find_by_domain('gmail.com').explain(:analyze)` to see the results.
 
+If you want to use specs, run `./bin/test_case.sh`
+
 ## Requirements
 
 * Ruby 3.4.2
