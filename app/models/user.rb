@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # connects_to database: { writing: :pg_db, reading: :pg_db }
+
   # PoC of ARFI working with custom indexes.
   # @example
   #   poc-arfi72(dev)> User.find_by_domain('gmail.com').to_sql
