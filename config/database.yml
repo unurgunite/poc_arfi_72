@@ -27,11 +27,11 @@ default: &default
   mysql_db: &mysql
     adapter: mysql2
     encoding: utf8mb4
-    database: my_db_name
-    username: <%= ENV.fetch('MY_DB_USERNAME', 'mysql') %>
-    password: <%= ENV.fetch('MY_DB_PASSWORD', 'mysql') %>
-    host: <%= ENV.fetch('MY_DB_HOST', 'localhost') %>
-    port: <%= ENV.fetch('PG_DB_PORT', '3306') %>
+    username: <%= ENV.fetch('MYSQL_DB_USERNAME', 'root') %>
+    password: <%= ENV.fetch('MYSQL_DB_PASSWORD', 'mysql') %>
+    host: <%= ENV.fetch('MYSQL_DB_HOST', '127.0.0.1') %>
+    port: <%= ENV.fetch('MYSQL_DB_PORT', '3306') %>
+    migrations_paths: db/mysql_db_migrate
     flags:
       - -COMPRESS
       - FOUND_ROWS
@@ -43,10 +43,10 @@ development:
   <<: *default
   pg_db:
     <<: *pg
-    database: poc_arfi_72_development
+    database: pg_poc_arfi_72_development
   mysql_db:
     <<: *mysql
-    database: poc_arfi_72_development
+    database: my_poc_arfi_72_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -80,7 +80,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: poc_arfi_72_test
+  pg_db:
+    <<: *pg
+    database: pg_poc_arfi_72_test
+  mysql_db:
+    <<: *mysql
+    database: my_poc_arfi_72_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

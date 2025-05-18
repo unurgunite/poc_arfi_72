@@ -5,9 +5,10 @@ gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.5", ">= 1.5.9"
 # User mysql as the database for Active Record
-gem 'mysql2', '~> 0.5.6'
+gem "mysql2", "~> 0.5.6"
 # ARFI gem for custom indexes
-gem "arfi"
+gem "arfi", path: "../arfi"
+# gem "arfi", path: "vendor/gems/arfi"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
@@ -37,6 +38,7 @@ gem "bootsnap", require: false
 
 gem "faker"
 gem "factory_bot_rails"
+gem "repl_type_completor"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
