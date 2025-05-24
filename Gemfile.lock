@@ -1,10 +1,8 @@
-GIT
-  remote: https://github.com/unurgunite/arfi.git
-  revision: 31109a5e24296db06fb34b2f5bb9e1dfce8bf9e3
-  branch: master
+PATH
+  remote: vendor/gems/arfi
   specs:
-    arfi (0.4.0)
-      rails (>= 7.0)
+    arfi (0.5.0)
+      rails (>= 6.0)
       rake (>= 12.0)
       thor (~> 1.3)
 
