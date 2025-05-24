@@ -10,7 +10,7 @@ This project is a demonstration of using [ARFI](https://github.com/unurgunite/ar
 ## Usage
 
 This project uses PostgreSQL database by default. There is also a demo for multi-db architecture use with MySQL along
-with PostgreSQL available at separate branch: https://github.com/unurgunite/poc_arfi_72/dynamic-database-use.
+with PostgreSQL available at separate branch: https://github.com/unurgunite/poc_arfi_72/tree/dynamic-database-use.
 
 ## Installation
 
