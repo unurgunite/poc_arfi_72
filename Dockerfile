@@ -1,7 +1,7 @@
 FROM ruby:3.4.4-slim-bookworm
 
 RUN apt-get update -qq && \
-    apt-get install -y build-essential libpq-dev default-libmysqlclient-dev libyaml-dev git yarn libjemalloc2 less vim && \
+    apt-get install -y build-essential libpq-dev default-libmysqlclient-dev libyaml-dev git yarn libjemalloc2 less vim tree && \
     apt-get clean autoclean && \
     apt-get autoremove --yes && \
     rm -rf /var/lib/apt/lists/* /root/.cache /tmp/* && \

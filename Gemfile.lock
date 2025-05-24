@@ -1,5 +1,7 @@
-PATH
-  remote: ../arfi
+GIT
+  remote: https://github.com/unurgunite/arfi.git
+  revision: 31109a5e24296db06fb34b2f5bb9e1dfce8bf9e3
+  branch: master
   specs:
     arfi (0.4.0)
       rails (>= 7.0)
