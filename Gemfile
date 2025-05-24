@@ -5,10 +5,13 @@ gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.5", ">= 1.5.9"
 # ARFI gem for custom indexes
-if ENV["GITHUB_REF_NAME"]
-  gem "arfi", github: "unurgunite/arfi", branch: ENV["GITHUB_REF_NAME"]
+if ENV["GITHUB_ACTIONS"]
+  branch = ENV["GITHUB_HEAD_REF"] || ENV["GITHUB_REF"].to_s.sub("refs/heads/", "")
+  gem "arfi", github: "unurgunite/arfi", branch: branch
 else
   gem "arfi"
+  # gem "arfi", path: "../arfi"
+  # gem "arfi", path: "vendor/gems/arfi"
 end
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
