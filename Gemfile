@@ -7,7 +7,13 @@ gem "pg", "~> 1.5", ">= 1.5.9"
 # User mysql as the database for Active Record
 gem "mysql2", "~> 0.5.6"
 # ARFI gem for custom indexes
-gem "arfi", github: "unurgunite/arfi", branch: ENV["GITHUB_REF_NAME"] || "master"
+if ENV['GITHUB_ACTIONS']
+  branch = ENV['GITHUB_HEAD_REF'] || ENV['GITHUB_REF'].to_s.sub('refs/heads/', '')
+  puts "Using GitHub branch: #{branch}"
+  gem "arfi", github: "unurgunite/arfi", branch: branch
+else
+  gem "arfi" # from RubyGems or local
+end
 # gem "arfi", path: "../arfi"
 # gem "arfi", path: "vendor/gems/arfi"
 # Use the Puma web server [https://github.com/puma/puma]
