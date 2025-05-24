@@ -5,7 +5,11 @@ gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.5", ">= 1.5.9"
 # ARFI gem for custom indexes
-gem "arfi"
+if ENV["GITHUB_REF_NAME"]
+  gem "arfi", github: "unurgunite/arfi", branch: ENV["GITHUB_REF_NAME"]
+else
+  gem "arfi"
+end
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
