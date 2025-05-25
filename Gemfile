@@ -9,10 +9,11 @@ gem "puma", ">= 5.0"
 # ARFI gem for custom indexes
 if ENV["GITHUB_ACTIONS"]
   branch = ENV["GITHUB_HEAD_REF"] || ENV["GITHUB_REF"].to_s.sub("refs/heads/", "")
+  branch = "master" if branch.empty?
   gem "arfi", github: "unurgunite/arfi", branch: branch
 else
-  # gem "arfi"
-  gem "arfi", path: "../arfi"
+  gem "arfi"
+  # gem "arfi", path: "../arfi"
   # gem "arfi", path: "vendor/gems/arfi"
 end
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
