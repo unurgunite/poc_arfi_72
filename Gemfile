@@ -9,6 +9,7 @@ gem "mysql2", "~> 0.5.6"
 # ARFI gem for custom indexes
 if ENV["GITHUB_ACTIONS"]
   branch = ENV["GITHUB_HEAD_REF"] || ENV["GITHUB_REF"].to_s.sub("refs/heads/", "")
+  branch = "master" if branch.empty?
   gem "arfi", github: "unurgunite/arfi", branch: branch
 else
   gem "arfi"
