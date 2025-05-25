@@ -1,24 +1,7 @@
-# README
+# Proof of Concept for ARFI gem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a demonstration of using ARFI gem
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There is nothing to do in `master` branch. Go to `dynamic-database-use` branch to see how to use gem with several
+databases at the same time or go to `single-database-use` to see how it works with just a single db instance (by default
+project uses PostgreSQL).
